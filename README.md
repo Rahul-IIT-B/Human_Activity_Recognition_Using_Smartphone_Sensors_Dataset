@@ -12,7 +12,7 @@ This project implements Human Activity Recognition (HAR) using smartphone sensor
   - Deep Learning with LSTM
 
 ## Dataset Description
-- **Source**: UCI HAR Dataset
+- **Source**: [UCI HAR Dataset](https://www.kaggle.com/datasets/uciml/human-activity-recognition-with-smartphones/data)
 - **Participants**: 30 subjects
 - **Sampling Rate**: 50Hz
 - **Window Size**: 2.56 seconds (128 readings) with 50% overlap
@@ -146,3 +146,5 @@ SIGNALS = [
 - matplotlib
 - seaborn
 
+## Research Papers
+- https://www.researchgate.net/publication/318514160_Feature_Selection_for_Activity_Recognition_from_Smartphone_Accelerometer_Data
