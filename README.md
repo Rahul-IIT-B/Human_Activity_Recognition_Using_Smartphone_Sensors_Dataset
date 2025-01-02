@@ -123,13 +123,6 @@ SIGNALS = [
 - **XGBoost**: learning_rate=0.2, max_depth=3, n_estimators=200
 - **LSTM**: batch_size=16, epochs=30, dropout=0.5
 
-## Future Improvements
-1. Feature selection optimization
-2. Hybrid model approaches
-3. Real-time prediction implementation
-4. Cross-validation with different window sizes
-5. Ensemble method exploration
-
 ## Requirements
 - Python 3.7+
 - scikit-learn
