@@ -25,19 +25,28 @@ This project implements Human Activity Recognition (HAR) using smartphone sensor
 1. Activity Distribution Analysis:
    - Nearly equal distribution of activities in the dataset
    - Walking upstairs takes approximately 10% longer than walking downstairs
+![newplot](https://github.com/user-attachments/assets/17c82a0c-6ea5-4bcc-a1ac-3e9534e3d267)
 
 2. Signal Analysis:
    - Clear separation between stationary and moving activities
+![937d01a1-5eef-4799-9af8-ef9d3a0d55ea](https://github.com/user-attachments/assets/0ec9283d-327e-443d-8f10-91fc379c190b)
    - Distinct patterns in acceleration magnitude for different activities
+     ![eb5c557a-e4d9-4fdb-b7e5-b507395aeda9](https://github.com/user-attachments/assets/741c9463-1345-43a4-a694-fb9a43f27652)
    - Gravity acceleration components help distinguish between activities
+![4bc302a5-6539-4fbf-82f2-afbe00e3271a](https://github.com/user-attachments/assets/0654782a-0b8e-41e3-99fd-d534cfab6c4a)
+![d1ab194d-15b4-4e54-9e91-303a4579a49b](https://github.com/user-attachments/assets/8e5ef239-d99b-4279-ac3c-768c8628bee9)
 
 3. Feature Analysis:
    - Correlation analysis revealed redundant features
+    ![174b5957-74f1-4e5d-8280-e4ebaa1cb96c](https://github.com/user-attachments/assets/8ca451df-15b7-4971-b2b5-8490cc8d5127)
    - T-SNE visualization showed clear clustering of activities except for "Standing" and "Sitting"
+![793293c9-b39b-4d4f-b9ac-b94e42d63716](https://github.com/user-attachments/assets/533ef734-2b3d-4cec-8993-421ce05a617b)
 
 ### Raw Signal Visualization
-- Plotted body acceleration (X, Y, Z axes)
-- Analyzed gyroscope data patterns
+- Plotted body acceleration (X, Y, Z axes)![a80bb4b2-b2c5-4e0b-9f87-017b60f954e4](https://github.com/user-attachments/assets/0de29943-7172-43a0-a151-b24c51981853)
+
+- Analyzed gyroscope data patterns![94216dd3-88b9-4a03-9a82-24f0a6887365](https://github.com/user-attachments/assets/116d35d5-3644-41eb-b8b1-8840bc826bac)
+
 - Created correlation matrices for features
 
 ## Modeling Approaches
@@ -118,10 +127,15 @@ SIGNALS = [
 ```
 
 ### Model Parameters
-- **SVM**: C=10, gamma='scale', kernel='poly'
-- **Logistic Regression**: C=1, penalty='l2'
-- **XGBoost**: learning_rate=0.2, max_depth=3, n_estimators=200
+- **SVM**: 'C': [0.1, 1, 10], 'gamma': ['scale', 'auto'], 'kernel': ['linear', 'poly', 'rbf']
+- **Logistic Regression**: 'C':[0.01, 0.1, 1, 10, 20, 30], 'penalty':['l2','l1']
+- **XGBoost**: 'n_estimators': [50, 100, 200],
+    'learning_rate': [0.01, 0.1, 0.2],
+    'max_depth': [3, 5, 7]
 - **LSTM**: batch_size=16, epochs=30, dropout=0.5
+- **DecisionTrees**: 'max_depth':np.arange(3,10,2)
+- **RandomForest**: 'n_estimators': np.arange(10,201,20), 'max_depth':np.arange(3,15,2)
+- **K-Nearest Neighbours**: 'n_neighbors': [3, 5, 7, 9]
 
 ## Requirements
 - Python 3.7+
