@@ -126,13 +126,12 @@ SIGNALS = [
 ]
 ```
 
-### Model Parameters
+### Model Parameters used for Hyper Parameter Tuning
 - **SVM**: 'C': [0.1, 1, 10], 'gamma': ['scale', 'auto'], 'kernel': ['linear', 'poly', 'rbf']
 - **Logistic Regression**: 'C':[0.01, 0.1, 1, 10, 20, 30], 'penalty':['l2','l1']
 - **XGBoost**: 'n_estimators': [50, 100, 200],
     'learning_rate': [0.01, 0.1, 0.2],
     'max_depth': [3, 5, 7]
-- **LSTM**: batch_size=16, epochs=30, dropout=0.5
 - **DecisionTrees**: 'max_depth':np.arange(3,10,2)
 - **RandomForest**: 'n_estimators': np.arange(10,201,20), 'max_depth':np.arange(3,15,2)
 - **K-Nearest Neighbours**: 'n_neighbors': [3, 5, 7, 9]
